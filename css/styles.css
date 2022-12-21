@@ -33,8 +33,9 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #8AA6BF;
-  --bs-secondary: #143F59;
+  --bs-primary: #45aa79;;
+  --bs-secondary: #80c884;
+  --bs-tertiary: #222223;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
@@ -60,8 +61,10 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #212529;
-  --bs-body-bg: rgb(255, 255, 255);
+  --bs-body-color: #bdc1c6;
+  --bs-body-bg: #2a2c2d;
+  --bs-body-link: #50fa7b;
+  --bs-body-link-hover: #b5ffc7;
 }
 
 *,
@@ -76,6 +79,10 @@
   }
 }
 
+html {
+  background-color: var(--bs-body-bg);
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -84,7 +91,6 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -98,7 +104,7 @@ hr {
 }
 
 hr:not([size]) {
-  height: 1px;
+  height: 0px;
 }
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
@@ -107,7 +113,13 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   line-height: 1.2;
-  color: #343a40;
+  color: var(--bs-body-color);
+}
+
+.underline-primary {
+  text-decoration: underline;
+  text-decoration-color: var(--bs-body-link);
+  text-decoration-thickness: 3px;
 }
 
 h1, .h1 {
@@ -237,11 +249,11 @@ sup {
 }
 
 a {
-  color: #262538;
+  color: var(--bs-body-link);
   text-decoration: underline;
 }
 a:hover {
-  color: #143F59;
+  color: var(--bs-body-link-hover);
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -640,6 +652,7 @@ progress {
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
+  background-color: var(--bs-body-bg);
 }
 
 @media (min-width: 576px) {
@@ -3957,7 +3970,7 @@ textarea.form-control-lg {
   color: #974a2d;
 }
 .nav-link.disabled {
-  color: #6c757d;
+  color: #62757d;
   pointer-events: none;
   cursor: default;
 }
@@ -3983,7 +3996,7 @@ textarea.form-control-lg {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
+  color: #534957;
   background-color: #fff;
   border-color: #dee2e6 #dee2e6 #fff;
 }
@@ -7719,12 +7732,12 @@ textarea.form-control-lg {
 /* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: var(--bs-primary) !important;
 }
 
 .text-secondary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
+  color: var(--bs-secondary) !important;
 }
 
 .text-success {
@@ -7810,12 +7823,16 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: var(--bs-primary) !important;
 }
 
 .bg-secondary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: var(--bs-secondary) !important;
+}
+
+.bg-tertiary {
+  background-color: var(--bs-tertiary);
 }
 
 .bg-success {
@@ -11291,7 +11308,7 @@ textarea.form-control-lg {
 }
 body {
   padding-top: 3.375rem;
-  color: #6c757d;
+  color: var(--bs-body-color);
 }
 
 @media (min-width: 992px) {
@@ -11390,7 +11407,7 @@ p.lead {
   justify-content: center;
   height: 3.5rem;
   width: 3.5rem;
-  background-color: #495057;
+  background-color: var(--bs-tertiary);
   color: #fff;
   border-radius: 100%;
   font-size: 1.5rem;
@@ -11400,7 +11417,21 @@ p.lead {
   margin-right: 0;
 }
 .social-icons .social-icon:hover {
-  background-color: #143F59;
+  background-color: var(--bs-primary);
+}
+
+.centered-icon {
+  padding: 2em; 
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+  height: 225px;
+  width: 225px;
+  color: var(--bs-gray-400);
+}
+
+.centered-icon:hover {
+  color: var(--bs-gray-300);
 }
 
 .dev-icons {
@@ -11415,6 +11446,7 @@ section.resume-section {
   padding-top: 5rem;
   padding-bottom: 5rem;
   max-width: 75rem;
+  background-color: var(--bs-body-bg);
 }
 section.resume-section .resume-section-content {
   width: 100%;
