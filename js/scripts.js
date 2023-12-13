@@ -31,6 +31,8 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Retreive github pinned repos for the projects section
+    // reload_gh_pinned();
 });
 
 var btn = document.querySelector('#downloadBtn')
@@ -44,6 +46,30 @@ function startDownload() {
       btn.classList.add('animation-ended')
     }, 1200)
   })
+}
+
+function reload_gh_pinned(){
+    var projectContent = document.getElementById('gh-pinned');
+        
+    fetch('https://gh-pinned-api.vercel.app/api?user=kylelevy').then(
+    json => json.json()
+    ).then(callback => { 
+       var results = callback;
+
+       for (i=0; i<6; i++)
+       {
+            html = `
+            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                 <div class="flex-grow-1">
+                     <a href="`+results[i].url+`"><h3 class="mb-0">`+results[i].name+`</h3></a>
+                     <div>`+results[i].description+`</div>
+                 </div>
+             </div>
+            `;
+            projectContent.insertAdjacentHTML('afterend', html);
+        }
+       
+    })
 }
 
 startDownload();
