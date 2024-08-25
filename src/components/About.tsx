@@ -1,6 +1,6 @@
 "use client";
 import { Paragraph } from "@/components/Paragraph";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import abtMeImg1 from "/public/images/abtMe_1.jpg"; 
 import abtMeImg2 from "/public/images/abtMe_2.jpg"; 
@@ -8,6 +8,7 @@ import abtMeImg3 from "/public/images/abtMe_3.jpg";
 import abtMeImg4 from "/public/images/abtMe_4.jpg"; 
 
 import { motion } from "framer-motion";
+import { Key } from "react";
 
 export default function About() {
   const images = [
@@ -19,7 +20,7 @@ export default function About() {
   return (
     <div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-10 my-10">
-        {images.map((image, index) => (
+        {images.map((image: StaticImageData, index) => (
           <motion.div
             key={image}
             initial={{
