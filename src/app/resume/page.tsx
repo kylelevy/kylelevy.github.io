@@ -7,7 +7,7 @@ import { Products } from "@/components/Products";
 import { WorkHistory } from "@/components/WorkHistory";
 import Image from "next/image";
 
-const Resume = "https://kylelevy.github.io/assets/Kyle_Levy_Resume.pdf";
+const Resume = "https://kylelevy.github.io/Kyle_Levy_Resume.pdf";
 
 export default function Home() {
   return (
