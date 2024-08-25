@@ -6,26 +6,13 @@ import { products } from "@/constants/products";
 import Link from "next/link";
 import Image from "next/image";
 import { Paragraph } from "./Paragraph";
-import { motion } from "framer-motion";
 
 export const Products = () => {
   return (
     <div>
       <div className="grid grid-cols-1  gap-10">
         {products.map((product: Product, idx: number) => (
-          <motion.div
-            key={product.href}
-            initial={{
-              opacity: 0,
-              x: -50,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{ duration: 0.2, delay: idx * 0.1 }}
-          >
-            <Link
+          <Link
               href={product.slug ? `/projects/${product.slug}` : product.href}
               key={product.href}
               className="group flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 hover:bg-gray-50 dark:hover:bg-slate-900 rounded-2xl transition duration-200 pt-4"
@@ -61,7 +48,6 @@ export const Products = () => {
                 </div>
               </div>
             </Link>
-          </motion.div>
         ))}
       </div>
     </div>

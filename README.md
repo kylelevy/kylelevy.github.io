@@ -12,4 +12,3 @@ This portfolio is based on a templlate by Manu Arora as seen on [Aceternity UI](
 ## Built with
 - Next.js
 - Tailwindcss
-- Framer motion

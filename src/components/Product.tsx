@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import { Heading } from "./Heading";
 import { Paragraph } from "./Paragraph";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export const SingleProduct = ({ product }: { product: Product }) => {
   const [activeImage, setActiveImage] = useState<StaticImageData | string>(
@@ -13,21 +12,6 @@ export const SingleProduct = ({ product }: { product: Product }) => {
   );
   return (
     <div className="py-10">
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 30,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 0.5,
-        }}
-        key={product.slug}
-        className="relative"
-      >
         <Image
           src={activeImage}
           alt="thumbnail"
@@ -36,7 +20,6 @@ export const SingleProduct = ({ product }: { product: Product }) => {
           className="rounded-md object-contain"
         />
         <div className="absolute bottom-0 bg-white dark:bg-slate-800 h-40 w-full [mask-image:linear-gradient(to_bottom,transparent,white)] dark:[mask-image:linear-gradient(to_bottom,transparent,slate-800)]" />
-      </motion.div>
       <div className="flex flex-row justify-center my-8 flex-wrap">
         {product.images.map((image, idx) => (
           <button

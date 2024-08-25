@@ -7,9 +7,6 @@ import abtMeImg2 from "/public/images/abtMe_2.jpg";
 import abtMeImg3 from "/public/images/abtMe_3.jpg"; 
 import abtMeImg4 from "/public/images/abtMe_4.jpg"; 
 
-import { motion } from "framer-motion";
-import type { Key } from "react";
-
 export default function About() {
   const images = [
       abtMeImg1,
@@ -21,28 +18,14 @@ export default function About() {
     <div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-10 my-10">
         {images.map((image: StaticImageData, index) => (
-          <motion.div
-            key={image.src}
-            initial={{
-              opacity: 0,
-              y: -50,
-              rotate: 0,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              rotate: index % 2 === 0 ? 3 : -3,
-            }}
-            transition={{ duration: 0.2, delay: index * 0.1 }}
-          >
-            <Image
-              src={image.src}
-              width={200}
-              height={400}
-              alt="about"
-              className="rounded-md object-cover transform rotate-3 shadow-xl block w-full h-40 md:h-60 hover:rotate-0 transition duration-200"
-            />
-          </motion.div>
+          <Image
+            key={index}
+            src={image.src}
+            width={200}
+            height={400}
+            alt="about"
+            className="rounded-md object-cover transform rotate-3 shadow-xl block w-full h-40 md:h-60 hover:rotate-0 transition duration-200"
+          />
         ))}
       </div>
 

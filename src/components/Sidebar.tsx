@@ -9,7 +9,6 @@ import { twMerge } from "tailwind-merge";
 import { Heading } from "./Heading";
 import { socials } from "@/constants/socials";
 import { Badge } from "./Badge";
-import { AnimatePresence, motion } from "framer-motion";
 import { IconLayoutSidebarRightCollapse } from "@tabler/icons-react";
 import { isMobile } from "@/lib/utils";
 import profileImage from "/public/images/profile.jpg"
@@ -20,25 +19,15 @@ export const Sidebar = () => {
 
   return (
     <>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ x: -200 }}
-            animate={{ x: 0 }}
-            transition={{ duration: 0.2, ease: "linear" }}
-            exit={{ x: -200 }}
-            className="px-6 z-[100] py-10 bg-neutral-100 dark:bg-slate-900 max-w-[14rem] lg:w-fit  fixed lg:relative  h-screen left-0 flex flex-col justify-between"
-          >
+          <div className={`px-6 z-[100] py-10 bg-neutral-100 dark:bg-slate-900 max-w-[14rem] lg:w-fit  fixed lg:relative  h-screen left-0 flex flex-col justify-between ${open ? '' : 'hidden'}`}>
             <div className="flex-1 overflow-auto">
               <SidebarHeader />
               <Navigation setOpen={setOpen} />
             </div>
-            <div className="pb-[60%] sm:pb-0" onClick={() => isMobile() && setOpen(false)}>
+            <div className={`pb-[60%] sm:pb-0 ${open ? '' : 'hidden'}`} onClick={() => isMobile() && setOpen(false)}>
               <Badge href="/resume" text="Read Resume" />
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
       <button
         className="fixed lg:hidden bottom-4 right-4 h-10 w-10 border border-neutral-200 dark:border-neutral-700 bg-slate-900 dark:bg-neutral-100 rounded-full backdrop-blur-sm flex items-center justify-center z-50"
         onClick={() => setOpen(!open)}
