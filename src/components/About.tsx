@@ -8,7 +8,7 @@ import abtMeImg3 from "/public/images/abtMe_3.jpg";
 import abtMeImg4 from "/public/images/abtMe_4.jpg"; 
 
 import { motion } from "framer-motion";
-import { Key } from "react";
+import type { Key } from "react";
 
 export default function About() {
   const images = [

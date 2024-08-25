@@ -2,7 +2,11 @@
 import { useState, useEffect } from "react";
 import { IconSun, IconMoon } from "@tabler/icons-react";
 
-export const ToggleTheme = () => {
+interface ToggleThemeProps {
+    noReturn?: boolean;
+}
+
+export const ToggleTheme: React.FC<ToggleThemeProps> = ({ noReturn }) => {
     const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
@@ -42,6 +46,8 @@ export const ToggleTheme = () => {
         setIsDark(prev => !prev); // Toggle the state
     };
 
+    if (noReturn) {return null};
+    
     return (
         <div className="grid">
             <a onClick={toggleTheme} className="text-black dark:text-white grid-center my-auto">

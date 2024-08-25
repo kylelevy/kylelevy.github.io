@@ -5,10 +5,13 @@ import { Highlight } from "@/components/Highlight";
 import { Paragraph } from "@/components/Paragraph";
 import { Products } from "@/components/Products";
 import { TechStack } from "@/components/TechStack";
+import { ToggleTheme } from "@/components/ToggleTheme";
+
 
 export default function Home() {
   return (
     <Container>
+        <ToggleTheme noReturn={true}/>
         <span className="text-4xl">👋</span>
         <Heading className="font-black dark:font-white">Hello there! I&apos;m Kyle</Heading>
         <Paragraph className="max-w-xl mt-4">
