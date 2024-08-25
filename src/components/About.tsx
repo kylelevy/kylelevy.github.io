@@ -4,17 +4,12 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
-import aboutMe_img1 from "/public/images/abtMe_1.jpg";
-import aboutMe_img2 from "/public/images/abtMe_2.jpg";
-import aboutMe_img3 from "/public/images/abtMe_3.jpg";
-import aboutMe_img4 from "/public/images/abtMe_4.jpg";
-
 export default function About() {
   const images = [
-    aboutMe_img1,
-    aboutMe_img2,
-    aboutMe_img3,
-    aboutMe_img4,
+    "/public/images/abtMe_1.jpg",
+    "/public/images/abtMe_2.jpg",
+    "/public/images/abtMe_3.jpg",
+    "/public/images/abtMe_4.jpg",
   ];
   return (
     <div>
