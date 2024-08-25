@@ -22,7 +22,7 @@ export default function About() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-10 my-10">
         {images.map((image: StaticImageData, index) => (
           <motion.div
-            key={image}
+            key={image.src}
             initial={{
               opacity: 0,
               y: -50,
@@ -36,7 +36,7 @@ export default function About() {
             transition={{ duration: 0.2, delay: index * 0.1 }}
           >
             <Image
-              src={image}
+              src={image.src}
               width={200}
               height={400}
               alt="about"
