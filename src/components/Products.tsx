@@ -1,4 +1,3 @@
-"use server";
 import React, { Suspense } from "react";
 import { Heading } from "./Heading";
 import { Product } from "@/types/products";
