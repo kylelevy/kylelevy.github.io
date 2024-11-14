@@ -96,6 +96,7 @@ export const TechStack = () => {
             height={`200`}
             alt={item.title}
             className={twMerge("object-contain mr-4 mb-4", item.className)}
+            loading="lazy"
           />
         ))}
       </div>

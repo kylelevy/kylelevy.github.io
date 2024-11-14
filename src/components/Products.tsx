@@ -18,16 +18,14 @@ export const Products = () => {
               prefetch={true}
               className="group flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 hover:bg-gray-50 dark:hover:bg-slate-900 rounded-2xl transition duration-200 pt-4"
             >
-              <Suspense fallback={<div className="h-[200px] w-[200px] bg-pink-900" />}>
-                <Image
-                  src={product.thumbnail}
-                  alt="thumbnail"
-                  height="200"
-                  width="200"
-                  className="rounded-md"
-                  loading="lazy"
-                />
-              </Suspense>
+              <Image
+                src={product.thumbnail}
+                alt="thumbnail"
+                height="200"
+                width="200"
+                className="rounded-md"
+                loading="eager"
+              />
               <div className="flex flex-col justify-between">
                 <div>
                   <Heading
