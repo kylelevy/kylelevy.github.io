@@ -1,12 +1,12 @@
-import sixdofThumbnail from "/public/images/6dof_thumbnail.jpeg";
+import sixdofThumbnail from "/public/images/6dof_thumbnail.jpg";
 import neatThumbnail from "/public/images/neatThumbnail.png";
 import pongDemo from "/public/images/pong_demo.gif";
 import templateMakerThumbnail from "/public/images/templateMakerThumbnail.png";
 import templateMaker2 from "/public/images/templateMaker2.png";
 import homelabThumbnail from "/public/images/homelabThumbnail.jpg";
 import CO2RobotThumbnail from "/public/images/CO2RobotThumbnail.png";
-import CO2Robot2 from "/public/images/CO2Robot2.jpeg";
-import CO2Robot3 from "/public/images/CO2Robot3.jpeg";
+import CO2Robot2 from "/public/images/CO2Robot2.jpg";
+import CO2Robot3 from "/public/images/CO2Robot3.jpg";
 import SaRRobotThumbnail from "/public/images/SarRobotThumbnail.jpeg";
 import SaRRobot2 from "/public/images/SaRRobot2.jpg";
 
