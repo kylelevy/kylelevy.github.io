@@ -53,6 +53,7 @@ export const Navigation = ({
         <Link
           key={link.href}
           href={link.href}
+          prefetch={true}
           onClick={() => isMobile() && setOpen(false)}
           className={twMerge(
             "text-secondary dark:text-darkSecondary hover:text-primary dark:hover:text-darkPrimary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm",
