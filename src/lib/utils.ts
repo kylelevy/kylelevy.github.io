@@ -1,5 +1,4 @@
-export const isMobile = () => {
-  if (typeof window === "undefined") return false;
-  const width = window.innerWidth;
-  return width <= 1024;
-};
+export const isMobile = (): boolean => {
+    return typeof window !== "undefined" && window.innerWidth <= 1024;
+  };
+  

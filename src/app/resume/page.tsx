@@ -3,9 +3,7 @@ import { DownloadButton } from "@/components/DownloadButton";
 import { Heading } from "@/components/Heading";
 import { Highlight } from "@/components/Highlight";
 import { Paragraph } from "@/components/Paragraph";
-import { Products } from "@/components/Products";
 import { WorkHistory } from "@/components/WorkHistory";
-import Image from "next/image";
 
 const Resume = "https://kylelevy.github.io/Kyle_Levy_Resume.pdf";
 
@@ -27,7 +25,7 @@ export default function Home() {
       <DownloadButton
         text="Download PDF"
         href={Resume}
-        className="flex justify-center"
+        className="flex justify-center pb-1 sm:pb-0"
       />
     </Container>
   );

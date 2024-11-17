@@ -27,6 +27,12 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="dark:bg-slate-900">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.7.8/src/app/ci.min.css"
+        />
+      </head>
       <ThemeProvider>
         <body
           className={twMerge(
