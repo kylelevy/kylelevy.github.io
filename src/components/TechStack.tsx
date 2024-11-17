@@ -47,11 +47,11 @@ export const TechStack = () => {
         className="font-black text-lg md:text-lg lg:text-lg mt-20 mb-4">
           Additional technologies
         </Heading>
+        <ul className="list-disc pl-5">
         {otherTech.map((item, index) => (
-          <ul className="list-disc pl-5">
             <li className="text-secondary dark:text-darkSecondary" key={index}>{item}</li>
-          </ul>
-        ))}
+          ))}
+        </ul>
     </div>
   );
 };
