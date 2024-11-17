@@ -18,6 +18,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
           height="1000"
           width="1000"
           className="rounded-md object-contain"
+          loading="lazy"
         />
         <div className="absolute bottom-0 bg-white dark:bg-slate-800 h-40 w-full [mask-image:linear-gradient(to_bottom,transparent,white)] dark:[mask-image:linear-gradient(to_bottom,transparent,slate-800)]" />
       <div className="flex flex-row justify-center my-8 flex-wrap">
@@ -32,6 +33,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
               height="1000"
               width="1000"
               className="h-14 w-16 md:h-40 md:w-60 object-cover object-top mr-4 mb-r border rounded-lg border-neutral-100 dark:border-neutral-900"
+              loading="eager"
             />
           </button>
         ))}

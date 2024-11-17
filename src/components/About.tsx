@@ -25,6 +25,7 @@ export default function About() {
             height={400}
             alt="about"
             className="rounded-md object-cover transform rotate-3 shadow-xl block w-full h-40 md:h-60 hover:rotate-0 transition duration-200"
+            loading="eager"
           />
         ))}
       </div>

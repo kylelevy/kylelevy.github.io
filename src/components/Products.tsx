@@ -1,5 +1,4 @@
-"use client";
-import React from "react";
+import React, { Suspense } from "react";
 import { Heading } from "./Heading";
 import { Product } from "@/types/products";
 import { products } from "@/constants/products";
@@ -15,6 +14,7 @@ export const Products = () => {
           <Link
               href={product.slug ? `/projects/${product.slug}` : product.href}
               key={product.href}
+              prefetch={true}
               className="group flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 hover:bg-gray-50 dark:hover:bg-slate-900 rounded-2xl transition duration-200 pt-4"
             >
               <Image
@@ -23,6 +23,7 @@ export const Products = () => {
                 height="200"
                 width="200"
                 className="rounded-md"
+                loading="eager"
               />
               <div className="flex flex-col justify-between">
                 <div>
