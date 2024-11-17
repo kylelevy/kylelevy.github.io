@@ -1,48 +1,55 @@
 "use client";
-import { navlinks } from "@/constants/navlinks";
-import { Navlink } from "@/types/navlink";
+import React from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
-import React, { useState } from "react";
-import { twMerge } from "tailwind-merge";
-import { Heading } from "./Heading";
-import { socials } from "@/constants/socials";
-import { Badge } from "./Badge";
-import { IconLayoutSidebarRightCollapse } from "@tabler/icons-react";
-import { isMobile } from "@/lib/utils";
+
 import profileImage from "/public/images/profile.jpg"
+import { navlinks } from "@/constants/navlinks";
+import { usePathname } from "next/navigation";
+import { socials } from "@/constants/socials";
 import { ToggleTheme } from "./ToggleTheme";
+import { Navlink } from "@/types/navlink";
+import { twMerge } from "tailwind-merge";
+import { MobileNav } from "./MobileNav";
+import { isMobile } from "@/lib/utils";
+import { Heading } from "./Heading";
+import { Badge } from "./Badge";
 
 export const Sidebar = () => {
-  const [open, setOpen] = useState(isMobile() ? false : true);
+  const [isMobileView, setIsMobileView] = useState(isMobile());
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(isMobile());
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  }, [])
+
+  if (isMobileView) {return <MobileNav/>}
 
   return (
     <>
-          <div className={`px-6 z-[100] py-10 bg-neutral-100 dark:bg-slate-900 max-w-[14rem] lg:w-fit  fixed lg:relative  h-screen left-0 flex flex-col justify-between ${open ? '' : 'hidden'}`}>
+          <div className={"px-6 z-[100] py-10 bg-neutral-100 dark:bg-slate-900 max-w-[14rem] lg:w-fit  fixed lg:relative  h-screen left-0 flex flex-col justify-between"}>
             <div className="flex-1 overflow-auto">
               <SidebarHeader />
-              <Navigation setOpen={setOpen} />
+              <Navigation />
             </div>
-            <div className={`pb-[60%] sm:pb-0 ${open ? '' : 'hidden'}`} onClick={() => isMobile() && setOpen(false)}>
+            <div className="pb-[60%] sm:pb-0">
               <Badge href="/resume" text="Read Resume" />
             </div>
           </div>
-      <button
-        className="fixed lg:hidden bottom-4 right-4 h-10 w-10 border border-neutral-200 dark:border-neutral-700 bg-slate-900 dark:bg-neutral-100 rounded-full backdrop-blur-sm flex items-center justify-center z-50"
-        onClick={() => setOpen(!open)}
-      >
-        <IconLayoutSidebarRightCollapse className="h-4 w-4 text-secondary dark:text-darkSecondary stroke-gray-100 dark:stroke-slate-900" />
-      </button>
     </>
   );
 };
 
-export const Navigation = ({
-  setOpen,
-}: {
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+export const Navigation = () => {
   const pathname = usePathname();
 
   const isActive = (href: string) => pathname === href;
@@ -54,7 +61,7 @@ export const Navigation = ({
           key={link.href}
           href={link.href}
           prefetch={true}
-          onClick={() => isMobile() && setOpen(false)}
+          onClick={() => isMobile()}
           className={twMerge(
             "text-secondary dark:text-darkSecondary hover:text-primary dark:hover:text-darkPrimary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm",
             isActive(link.href) && "bg-white dark:bg-slate-500 shadow-lg text-primary dark:text-darkPrimary"
