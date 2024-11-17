@@ -18,7 +18,7 @@ export const WorkHistory = () => {
           key={`timeline-${index}`}
         >
           <Paragraph className="w-40">{item.date}</Paragraph>
-          <div>
+          <div className="flex-1">
             <Heading
               as="h5"
               className="text-lg md:text-lg lg:text-lg text-emerald-500"
