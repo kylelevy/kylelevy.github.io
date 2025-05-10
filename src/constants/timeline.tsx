@@ -1,9 +1,9 @@
 export const timeline = [
   {
     company: "MDA Space",
-    title: "Engineer Student",
+    title: "Engineering Student",
     date: "2024 - Present",
-    description: "To build the space between proven and possible.",
+    description: "Building the space between proven and possible",
     responsibilities: [
       "Robotics & Space Operations",
       "Guidance, Navigation and Control",

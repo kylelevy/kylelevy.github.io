@@ -18,7 +18,7 @@ export const products = [
       "A personal server for self hosting various apps and services.",
     thumbnail: homelabThumbnail,
     images: [homelabThumbnail],
-    stack: ["Ubuntu", "Bash", "Docker"],
+    stack: ["Ubuntu", "Bash", "Docker", "NixOS", "NAS", "NGINX"],
     slug: "homelab",
     content: (
       <div>

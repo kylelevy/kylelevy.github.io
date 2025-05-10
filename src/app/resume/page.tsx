@@ -4,6 +4,14 @@ import { Heading } from "@/components/Heading";
 import { Highlight } from "@/components/Highlight";
 import { Paragraph } from "@/components/Paragraph";
 import { WorkHistory } from "@/components/WorkHistory";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Resume | Kyle Levy",
+  description:
+    "Explore the portfolio of Kyle, a Mechatronics and Robotics Engineering student at Queen's University. Discover his innovative projects in automation, machine learning, and robotics, and see how he's shaping the future of technology.",
+};
+
 
 const Resume = "https://kylelevy.github.io/Kyle_Levy_Resume.pdf";
 

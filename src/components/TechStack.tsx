@@ -24,10 +24,12 @@ export const TechStack = () => {
     "ROS",
     "Linux",
     "Raspberry Pi",
-    "Microcontroller Programming (C)",
+    "Embedded Programming (C)",
     "SolidWorks",
     "Fusion 360",
     "Nginx",
+    "Jenkins",
+    "OIDC/OAuth2"
   ]
   return (
     <div>
