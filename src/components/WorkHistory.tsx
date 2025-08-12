@@ -8,6 +8,8 @@ import {
   IconCheckbox,
   IconCircleCheckFilled,
 } from "@tabler/icons-react";
+import Markdown from "react-markdown";
+
 
 export const WorkHistory = () => {
   return (
@@ -33,7 +35,9 @@ export const WorkHistory = () => {
             </Paragraph>
 
             {item.responsibilities.map((responsibility, index) => (
-              <Step key={responsibility}>{responsibility}</Step>
+              <Step key={responsibility}>
+                <Markdown>{responsibility}</Markdown>
+              </Step>
             ))}
           </div>
         </div>
@@ -46,9 +50,9 @@ const Step = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex space-x-1 items-start my-2">
       <IconCircleCheckFilled className="h-3 w-4 mt-1 text-neutral-300 min-w-[3%]" />
-      <Paragraph className="text-sm md:text-sm lg:text-sm">
+      <div className="text-sm lg:text-base font-normal text-secondary dark:text-darkSecondary text-sm md:text-sm lg:text-sm">
         {children}
-      </Paragraph>
+      </div>
     </div>
   );
 };
