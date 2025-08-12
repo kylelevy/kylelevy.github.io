@@ -8,6 +8,8 @@ import {
   IconCheckbox,
   IconCircleCheckFilled,
 } from "@tabler/icons-react";
+import Markdown from "react-markdown";
+
 
 export const WorkHistory = () => {
   return (
@@ -33,7 +35,7 @@ export const WorkHistory = () => {
             </Paragraph>
 
             {item.responsibilities.map((responsibility, index) => (
-              <Step key={responsibility}>{responsibility}</Step>
+              <Step key={responsibility}><Markdown>{responsibility}</Markdown></Step>
             ))}
           </div>
         </div>
