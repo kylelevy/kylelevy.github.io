@@ -18,19 +18,14 @@ export const products = [
       "A personal server for self hosting various apps and services.",
     thumbnail: homelabThumbnail,
     images: [homelabThumbnail],
-    stack: ["Ubuntu", "Bash", "Docker", "Wireguard", "NAS", "NGINX"],
+    stack: ["Ubuntu", "Bash", "Docker", "VPN", "NAS", "NGINX"],
     slug: "homelab",
-    content: (
-      <div>
-        <p>
-          I continue to experiment and innovate using my homelab server to allow 
+    content: 
+          `I continue to experiment and innovate using my homelab server to allow 
           me to host various apps and services myself including Network Attatched 
           Storage, local LLM and AI models, website hosting, home automation, 
           backup and recovery services, remote VPN access, and DevOps tooling 
-          and more.{" "}
-        </p>
-      </div>      
-    ),
+          and more.`,
   },
   {
     href: "",
@@ -41,15 +36,11 @@ export const products = [
     images: [sixdofThumbnail],
     stack: ["C", "C++", "Python", "ROS2"],
     slug: "6dof_robot",
-    content: (
-      <div>
-        <p>
+    content: `
           I am currently developing a library for my six-degree-of-freedom robotic
           manipulator, which controls the robot, calculates its forward and inverse, 
-          kinematics, and runs using ROS for high level controls and path planning.{" "}
-        </p>
-      </div>
-    ),
+          kinematics, and runs using ROS for high level controls and path planning.`
+   ,
   },
   {
     href: "",
@@ -60,18 +51,13 @@ export const products = [
     images: [SaRRobotThumbnail, SaRRobot2],
     stack: ["C", "C++", "Python"],
     slug: "sarRover",
-    content: (
-      <div>
-        <p>
+    content: `
         Worked in a pair to develop a semi-autonomous mobile robot 
         which would be used to navigate an environment autonomously 
         and then be manually piloted to manipulate objects remotely. 
         I specialized in the mechanical design of manipulators, 
         electrical systems, wireless communication systems, control 
-        systems, and navigation algorithms.{" "}
-        </p>
-      </div>
-    ),
+        systems, and navigation algorithms.`,
   },
   {
     href: "",
@@ -82,17 +68,11 @@ export const products = [
     images: [CO2RobotThumbnail, CO2Robot2, CO2Robot3],
     stack: ["C", "C++", "Python", "ROS"],
     slug: "CO2Robot",
-    content: (
-      <div>
-        <p>
-        Worked with a team to develop an autonomous mobile robot 
+    content: `Worked with a team to develop an autonomous mobile robot 
         which detected the CO2 levels in a room for air quality 
         safety purposes. I specialized in using ROS to connect the 
         Raspberry Pi with the Arduino and sensors and the navigation 
-        algorithm based on the LiDAR data.{" "}
-        </p>
-      </div>
-    ),
+        algorithm based on the LiDAR data.`,
   },
   {
     href: "",
@@ -103,20 +83,14 @@ export const products = [
     images: [pongDemo],
     stack: ["Python"],
     slug: "neatPong",
-    content: (
-      <div>
-        <p>
-          This program uses NeuroEvolution of Augmenting Topologies (NEAT), 
+    content: `This program uses NeuroEvolution of Augmenting Topologies (NEAT), 
           a genetic algorithm which has a neural network play pong and uses 
           renforcement learning to train it how to get better at the game. 
           Upon testing, the program was able to best its human counterpart 
           98.2% of the time from a sample size of over 100 games. This program 
-          is based on the work of Kenneth O. Stanley and {" "}
-          <a href="https://neat-python.readthedocs.io/en/latest/neat_overview.html">
-          this</a> library made using his research.{" "}
-        </p>
-      </div>
-    ),
+          is based on the work of Kenneth O. Stanley and 
+          [this]("https://neat-python.readthedocs.io/en/latest/neat_overview.html")
+          library made using his research.`,
   },
   {
     href: "",
@@ -127,19 +101,14 @@ export const products = [
     images: [templateMakerThumbnail, templateMaker2],
     stack: ["Python", "Latex"],
     slug: "templateMaker",
-    content: (
-      <div>
-        <p>
-         In the summer of 2022, I was a teacher of grade 11 physics. When teaching
+    content: `In the summer of 2022, I was a teacher of grade 11 physics. When teaching
          this class, my students wanted worksheets faster than I could make them. 
          I decided to automate that process using Python. I created a scipt which 
          can take a word problem and generate variations of the problem which alter 
          the numbers in the question. It then compiles all the answers into a 
          key and prints it on the back of the document. This project leveraged LaTeX 
          to compile the documents and saved me countless hours of copying and pasting 
-         the same question and recalculating the new answers by hand.{" "}
-        </p>
-      </div>
-    ),
+         the same question and recalculating the new answers by hand.
+        `,
   },
 ];

@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
 import { Heading } from "./Heading";
 import { Paragraph } from "./Paragraph";
-import Link from "next/link";
+import ReactMarkdown from "react-markdown";
 
 export const SingleProduct = ({ product }: { product: Product }) => {
   const [activeImage, setActiveImage] = useState<StaticImageData | string>(
@@ -20,7 +20,6 @@ export const SingleProduct = ({ product }: { product: Product }) => {
           className="rounded-md object-contain"
           loading="lazy"
         />
-        <div className="absolute bottom-0 bg-white dark:bg-slate-800 h-40 w-full [mask-image:linear-gradient(to_bottom,transparent,white)] dark:[mask-image:linear-gradient(to_bottom,transparent,slate-800)]" />
       <div className="flex flex-row justify-center my-8 flex-wrap">
         {product.images.map((image, idx) => (
           <button
@@ -54,7 +53,7 @@ export const SingleProduct = ({ product }: { product: Product }) => {
         <Paragraph className="max-w-xl mt-4">{product.description}</Paragraph>
       </div>
       <div className="prose prose-sm md:prose-base max-w-none text-neutral-600 dark:text-neutral-300">
-        {product?.content}
+          {product?.content}
       </div>
 
       {/* <a
