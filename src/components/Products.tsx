@@ -23,7 +23,6 @@ export const Products = () => {
                 height="200"
                 width="200"
                 className="rounded-xl"
-                loading="eager"
               />
               <div className="flex flex-col justify-between">
                 <div>

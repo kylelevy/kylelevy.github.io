@@ -33,7 +33,6 @@ export const SingleProduct = ({ product }: { product: Product }) => {
               height="1000"
               width="1000"
               className="h-14 w-16 md:h-40 md:w-60 object-cover object-top mr-4 mb-r border rounded-lg border-neutral-100 dark:border-neutral-900"
-              loading="eager"
             />
           </button>
         ))}
