@@ -18,14 +18,16 @@ export const products = [
       "A personal server for self hosting various apps and services.",
     thumbnail: homelabThumbnail,
     images: [homelabThumbnail],
-    stack: ["Ubuntu", "Bash", "Docker", "NixOS", "NAS", "NGINX"],
+    stack: ["Ubuntu", "Bash", "Docker", "Wireguard", "NAS", "NGINX"],
     slug: "homelab",
     content: (
       <div>
         <p>
-          I am currently expanding my homelab server to allow me to host various
-          apps and services myself including Network Attatched Storage, website hosting, 
-          home automation, backup and recovery services, and more.{" "}
+          I continue to experiment and innovate using my homelab server to allow 
+          me to host various apps and services myself including Network Attatched 
+          Storage, local LLM and AI models, website hosting, home automation, 
+          backup and recovery services, remote VPN access, and DevOps tooling 
+          and more.{" "}
         </p>
       </div>      
     ),
@@ -37,17 +39,14 @@ export const products = [
       "A low level firmware to control a 6-DOF manipulator using an ESP32 microcontroller.",
     thumbnail: sixdofThumbnail,
     images: [sixdofThumbnail],
-    stack: ["C", "C++"],
+    stack: ["C", "C++", "Python", "ROS2"],
     slug: "6dof_robot",
     content: (
       <div>
         <p>
           I am currently developing a library for my six-degree-of-freedom robotic
-          manipulator, which controls the robot, calculates its forward, inverse, 
-          and differential kinematics, the dynamics of the system, and handles 
-          trajectory planning. In the future, I would like to incorporate ROS 
-          and upgrade the hardware to include force sensors to allow  
-          impedence control.{" "}
+          manipulator, which controls the robot, calculates its forward and inverse, 
+          kinematics, and runs using ROS for high level controls and path planning.{" "}
         </p>
       </div>
     ),
