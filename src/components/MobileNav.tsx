@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { twMerge } from "tailwind-merge"
 import { ToggleTheme } from "./ToggleTheme"
 
-export const MobileNav = ({ className }) => {
+export const MobileNav = ({ className }: { className?: string }) => {
   const pathname = usePathname()
   const isActive = (href: string) => pathname === href
 
