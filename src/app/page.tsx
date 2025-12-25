@@ -5,6 +5,7 @@ import { Paragraph } from "@/components/Paragraph";
 import { Products } from "@/components/Products";
 import { TechStack } from "@/components/TechStack";
 import { Badge } from "@/components/Badge";
+import { MobileSocials } from "@/components/MobileSocials";
 
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
           <div className="lg:hidden max-w-[40%] mx-auto pt-8">
             <Badge href="/resume" text="Read Resume" />
           </div>
+            <MobileSocials/>
         <Heading
           as="h2"
           className="font-black dark:font-white text-lg md:text-lg lg:text-lg mt-20 mb-4"
