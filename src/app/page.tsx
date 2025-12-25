@@ -1,4 +1,3 @@
-"use client"
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { Highlight } from "@/components/Highlight";
@@ -6,25 +5,9 @@ import { Paragraph } from "@/components/Paragraph";
 import { Products } from "@/components/Products";
 import { TechStack } from "@/components/TechStack";
 import { Badge } from "@/components/Badge";
-import { isMobile } from "@/lib/utils";
-import { useState, useEffect } from "react";
 
 
 export default function Home() {
-  const [isMobileView, setIsMobileView] = useState(isMobile());
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobileView(isMobile());
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    }
-  }, [])
 
   return (
     <Container>
@@ -40,7 +23,9 @@ export default function Home() {
           projects and can connect with me. Please feel free to reach out if you have any 
           further questions!
         </Paragraph>
-              {isMobileView ? (<div className="max-w-[40%] mx-auto pt-8"><Badge href="/resume" text="Read Resume" /></div>) : null}
+          <div className="lg:hidden max-w-[40%] mx-auto pt-8">
+            <Badge href="/resume" text="Read Resume" />
+          </div>
         <Heading
           as="h2"
           className="font-black dark:font-white text-lg md:text-lg lg:text-lg mt-20 mb-4"

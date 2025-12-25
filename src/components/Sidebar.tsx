@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,39 +11,24 @@ import { ToggleTheme } from "./ToggleTheme";
 import { Navlink } from "@/types/navlink";
 import { twMerge } from "tailwind-merge";
 import { MobileNav } from "./MobileNav";
-import { isMobile } from "@/lib/utils";
 import { Heading } from "./Heading";
 import { Badge } from "./Badge";
 
 export const Sidebar = () => {
-  const [isMobileView, setIsMobileView] = useState(isMobile());
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobileView(isMobile());
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    }
-  }, [])
-
-  if (isMobileView) {return <MobileNav/>}
-
   return (
     <>
-          <div className={"px-6 z-[100] py-10 bg-neutral-100 dark:bg-slate-900 max-w-[14rem] lg:w-fit  fixed lg:relative  h-screen left-0 flex flex-col justify-between"}>
-            <div className="flex-1 overflow-auto">
-              <SidebarHeader />
-              <Navigation />
-            </div>
-            <div className="pb-[60%] sm:pb-0">
-              <Badge href="/resume" text="Read Resume" />
-            </div>
-          </div>
+      {/* Mobile Nav */}
+      <MobileNav className={"lg:hidden "} />
+      {/* Regular Nav */}
+      <div className={"hidden lg:block px-6 z-[100] py-10 bg-neutral-100 dark:bg-slate-900 max-w-[14rem] lg:w-fit  fixed lg:relative  h-screen left-0 flex flex-col justify-between"}>
+        <div className="flex-1 overflow-auto">
+          <SidebarHeader />
+          <Navigation />
+        </div>
+        <div className="pb-[60%] sm:pb-0">
+          <Badge href="/resume" text="Read Resume" />
+        </div>
+      </div>
     </>
   );
 };
@@ -61,7 +45,6 @@ export const Navigation = () => {
           key={link.href}
           href={link.href}
           prefetch={true}
-          onClick={() => isMobile()}
           className={twMerge(
             "text-secondary dark:text-darkSecondary hover:text-primary dark:hover:text-darkPrimary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm",
             isActive(link.href) && "bg-white dark:bg-slate-500 shadow-lg text-primary dark:text-darkPrimary"

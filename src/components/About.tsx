@@ -20,7 +20,7 @@ export default function About() {
         {images.map((image: StaticImageData, index) => (
           <Image
             key={index}
-            src={image.src}
+            src={image}
             width={200}
             height={400}
             alt="about"

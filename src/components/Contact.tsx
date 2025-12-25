@@ -22,8 +22,13 @@ export const Contact = () => {
     e.preventDefault();
     const email = "kylerlevy@gmail.com";
 
-    const url = `mailto:${email}?subject=${formData.name.value} - ${formData.subject.value}&body=${formData.message.value}`;
-
+    const params = new URLSearchParams({
+      subject: `${formData.name.value} - ${formData.subject.value}`,
+      body: formData.message.value,
+    });
+    
+    const url = `mailto:${email}?${params.toString()}`;
+    
     var win = window.open(url, '_blank');
     win? win.focus : null;
   };
@@ -46,7 +51,8 @@ export const Contact = () => {
           }}
         />
         <input
-          type="subject"
+          type="text"
+          name="subject"
           placeholder="Subject"
           className="bg-neutral-100 dark:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-200 focus:dark:ring-neutral-700 px-2 py-2 rounded-md text-sm text-neutral-700 dark:text-gray-200 w-full"
           value={formData.subject.value}

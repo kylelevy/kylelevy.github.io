@@ -23,8 +23,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  ToggleTheme;
-
   return (
     <html lang="en" className="dark:bg-slate-900">
       <head>
