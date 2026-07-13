@@ -25,16 +25,12 @@ export default function Home() {
         <Highlight>finding new ways</Highlight> to solve unique and complex 
         problems.
       </Paragraph>
-      <Paragraph className="italic">
-        <br/>
-        P.S. the PDF version can be downloaded at the bottom of the page :)
-      </Paragraph>
-      <WorkHistory />
       <DownloadButton
         text="Download PDF"
         href={Resume}
-        className="flex justify-center pb-1 sm:pb-0"
+        className="flex justify-center pb-1 sm:pb-0 pt-10"
       />
+      <WorkHistory />
     </Container>
   );
 }
