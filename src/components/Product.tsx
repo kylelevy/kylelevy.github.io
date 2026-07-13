@@ -31,12 +31,12 @@ export const SingleProduct = ({ product }: { product: Product }) => {
               alt="product thumbnail"
               height="1000"
               width="1000"
-              className="h-14 w-16 md:h-40 md:w-60 object-cover object-top mr-4 mb-r border rounded-lg border-neutral-100 dark:border-neutral-900"
+              className="h-14 w-16 md:h-40 md:w-60 object-cover object-top mr-4 mb-4 border rounded-lg border-neutral-100 dark:border-neutral-900"
             />
           </button>
         ))}
       </div>
-      <div className="flex lg:flex-row justify-between items-center flex-col mt-20">
+      <div className="flex flex-col justify-between items-center mt-20">
         <Heading className="font-black mb-2 pb-1"> {product.title}</Heading>
         <div className="flex space-x-2 md:mb-1 mt-2 md:mt-0">
           {product.stack?.map((stack: string) => (
@@ -52,8 +52,8 @@ export const SingleProduct = ({ product }: { product: Product }) => {
       <div>
         <Paragraph className="max-w-xl mt-4">{product.description}</Paragraph>
       </div>
-      <div className="prose prose-sm md:prose-base max-w-none text-neutral-600 dark:text-neutral-300">
-          {product?.content}
+      <div className="prose-sm md:prose-base max-w-none text-neutral-600 dark:text-neutral-300">
+          {product.content ? <ReactMarkdown>{String(product.content)}</ReactMarkdown> : null}
       </div>
 
       {/* <a
