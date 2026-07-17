@@ -2,7 +2,6 @@
 import { Product } from "@/types/products";
 import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
-import { Heading } from "./Heading";
 import { Paragraph } from "./Paragraph";
 import ReactMarkdown from "react-markdown";
 
@@ -36,13 +35,12 @@ export const SingleProduct = ({ product }: { product: Product }) => {
           </button>
         ))}
       </div>
-      <div className="flex flex-col justify-between items-center mt-20">
-        <Heading className="font-black mb-2 pb-1"> {product.title}</Heading>
+      <div className="flex flex-col justify-between items-center">
         <div className="flex space-x-2 md:mb-1 mt-2 md:mt-0">
           {product.stack?.map((stack: string) => (
             <span
               key={stack}
-              className="text-xs  md:text-xs lg:text-xs bg-gray-50 dark:bg-slate-700 px-2 py-1 rounded-sm text-secondary dark:text-gray-300"
+              className="text-xs md:text-xs lg:text-xs bg-gray-50 dark:bg-slate-700 px-2 py-1 rounded-sm text-secondary dark:text-gray-300"
             >
               {stack}
             </span>
