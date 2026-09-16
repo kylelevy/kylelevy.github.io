@@ -50,8 +50,23 @@ export const SingleProduct = ({ product }: { product: Product }) => {
       <div>
         <Paragraph className="max-w-xl mt-4">{product.description}</Paragraph>
       </div>
-      <div className="prose-sm md:prose-base max-w-none text-neutral-600 dark:text-neutral-300">
-          {product.content ? <ReactMarkdown>{String(product.content)}</ReactMarkdown> : null}
+      <div className="prose prose-sm md:prose-base max-w-none text-neutral-600 dark:text-neutral-300 dark:prose-invert prose-a:text-blue-600 prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-blue-500 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300">
+        {product.content ? (
+          <ReactMarkdown
+            components={{
+              a: ({ node, ...props }) => (
+                <a
+                  {...props}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium"
+                />
+              ),
+            }}
+          >
+            {String(product.content)}
+          </ReactMarkdown>
+        ) : null}
       </div>
 
       {/* <a
