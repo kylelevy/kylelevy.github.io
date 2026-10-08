@@ -15,7 +15,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Kyle Levy",
   description:
-    "Explore the portfolio of Kyle, a Mechatronics and Robotics Engineering student at Queen's University. Discover his innovative projects in automation, machine learning, and robotics, and see how he's shaping the future of technology.",
+    "Explore the portfolio of Kyle, a Mechatronics and Robotics Engineer from Queen's University. Discover his innovative projects in automation, machine learning, and robotics, and see how he's shaping the future of technology.",
 };
 
 export default function RootLayout({
